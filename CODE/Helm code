@@ -1,0 +1,20 @@
+# Using Helm chart to run code in different environment such as dev,prod,test etc.
+#install helm using
+sudo snap install helm --classic
+# create directory named helm go to that directory and run command
+helm create hello-python-app-chart
+cd hello-python-app-chart/
+ls
+rm -r charts
+cd templates/
+rm -rf *
+#copy manifests file under templates and edit deployment.yaml
+vim deployment.yaml
+# edit values.yaml accordingly
+kubectl get all
+# delete previous svc,deploy, ing using if any present
+kubectl delete deploy hello-python-app
+kubectl delete svc  hello-python-app
+kubectl delete ing  hello-python-app
+helm install hello-python-app ./hello-python-app-chart
+helm uninstall hello-python-app
