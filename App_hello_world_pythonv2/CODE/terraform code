@@ -1,9 +1,0 @@
-#go to terraform folder where .tf files are present
-
-terraform init
-
-terraform plan
-
-terraform apply --auto-approve
-
-aws eks update-kubeconfig --name demo-cluster --region us-east-1

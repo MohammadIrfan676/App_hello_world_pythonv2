@@ -1,7 +1,0 @@
-docker build . -t flaskt3:latest
-docker images
-docker run -d -p 8080:8080 flaskt3:latest
-docker tag flaskt3:latest mohammadirfan676/flaskt3:latest
-docker push mohammadirfan676/flaskt3:latest
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
